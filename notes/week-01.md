@@ -2,7 +2,7 @@
 
 ## What I worked on
 
-- Monday: Set up horizon-web — Vite + React + TypeScript + ESLint + Prettier
+- Monday: - Set up horizon-web — Vite + React + TypeScript + ESLint + Prettier | jsx, functional components, props | created one simple | card components
 - Tuesday:
 - Wednesday:
 - Thursday:
