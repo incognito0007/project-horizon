@@ -60,3 +60,11 @@ body {
 .component button:hover {
   background-color: #357abd;
 }
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
