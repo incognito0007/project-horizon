@@ -61,6 +61,23 @@ const customer2: Customer = {
   // bio is optional, so it's not required to provide it when creating a Customer object, this is one of the key benefits of using interfaces to define object types, it allows us to specify which properties are required and which are optional, providing better flexibility and type safety.
 }
 
+type shopDetails = {
+  readonly name: string // this property is read-only, it cannot be modified after it has been initialized, this is one of the key benefits of using type aliases to define object types, it allows us to specify which properties are read-only, providing better immutability and type safety.
+  location: string
+}
+
+const teaShopBranch1: shopDetails = {
+  name: 'Chai Point',
+  location: 'New York',
+}
+// teaShopBranch1.name = 'New Name' // this will result in a type error because the name property is read-only and cannot be modified after it has been initialized.
+
+const teaShopBranch2: shopDetails = {
+  name: 'Tea Time',
+  location: 'San Francisco',
+}
+// teaShopBranch2.name = 'Tea Time Express' // this will result in a type error because the name property is read-only and cannot be modified after it has been initialized.
+
 function printOrderDetails() {
   console.log(makeChai({ type: 'Masala Chai', sugar: 2, strong: true }))
   console.log(serveChai({ type: 'Ginger Chai', sugar: 1, strong: false }))
@@ -75,6 +92,12 @@ function printOrderDetails() {
   )
   console.log(`Customer 1: Name - ${customer1.name}, Bio - ${customer1.bio}`)
   console.log(`Customer 2: Name - ${customer2.name}, Bio - ${customer2.bio ?? 'N/A'}`)
+  console.log(
+    `Tea Shop Branch 1: Name - ${teaShopBranch1.name}, Location - ${teaShopBranch1.location}`
+  )
+  console.log(
+    `Tea Shop Branch 2: Name - ${teaShopBranch2.name}, Location - ${teaShopBranch2.location}`
+  )
 }
 
 export { printOrderDetails }
