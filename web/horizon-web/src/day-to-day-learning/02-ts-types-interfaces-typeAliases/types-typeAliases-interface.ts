@@ -1,8 +1,14 @@
-function makeChai(order: { type: string; sugar: number; strong: boolean }) {
+type ChaiOrder = {
+  type: string
+  sugar: number
+  strong: boolean
+}
+
+function makeChai(order: ChaiOrder) {
   console.log(order)
 }
 
-function serveChai(order: { type: string; sugar: number; strong: boolean }) {
+function serveChai(order: ChaiOrder) {
   console.log(order)
 }
 
