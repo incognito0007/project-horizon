@@ -3,7 +3,7 @@
 ## What I worked on
 
 - Monday: - Set up horizon-web — Vite + React + TypeScript + ESLint + Prettier | jsx, functional components, props | created one simple | card components
-- Tuesday:
+- Tuesday: - types, type-aliases, interfaces | simple API response using typescript
 - Wednesday:
 - Thursday:
 - Friday:
