@@ -3,6 +3,7 @@ import FunctionalComponent from './day-to-day-learning/01-jsx-functComponents-pr
 import UnderstandingProps from './day-to-day-learning/01-jsx-functComponents-props/UnderstandingProps'
 import Card from './components/Card'
 import { printValuesInConsole } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/types'
+import { printCoordinates } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/typesAliases'
 
 function App() {
   const propsData = {
@@ -37,6 +38,7 @@ function App() {
         <Card key={index} {...data} />
       ))}
       {printValuesInConsole() ?? null}
+      {printCoordinates() ?? null}
     </div>
   )
 }
