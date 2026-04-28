@@ -47,6 +47,20 @@ const masalaChaiRecipe: MasalaChaiRecipe = {
   masala: 3,
 }
 
+type Customer = {
+  name: string
+  bio?: string
+}
+
+const customer1: Customer = {
+  name: 'Ankit Anand',
+  bio: 'A software engineer with a passion for learning and sharing knowledge.',
+}
+const customer2: Customer = {
+  name: 'John Doe',
+  // bio is optional, so it's not required to provide it when creating a Customer object, this is one of the key benefits of using interfaces to define object types, it allows us to specify which properties are required and which are optional, providing better flexibility and type safety.
+}
+
 function printOrderDetails() {
   console.log(makeChai({ type: 'Masala Chai', sugar: 2, strong: true }))
   console.log(serveChai({ type: 'Ginger Chai', sugar: 1, strong: false }))
@@ -59,6 +73,8 @@ function printOrderDetails() {
   console.log(
     `Masala Chai Recipe: Tea Leaves - ${masalaChaiRecipe.teaLeaves}g, Masala - ${masalaChaiRecipe.masala}g`
   )
+  console.log(`Customer 1: Name - ${customer1.name}, Bio - ${customer1.bio}`)
+  console.log(`Customer 2: Name - ${customer2.name}, Bio - ${customer2.bio ?? 'N/A'}`)
 }
 
 export { printOrderDetails }
