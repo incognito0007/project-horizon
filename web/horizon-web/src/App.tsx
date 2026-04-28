@@ -5,6 +5,7 @@ import Card from './components/Card'
 import { printValuesInConsole } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/types'
 import { printCoordinates } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/typesAliases'
 import { printOrderDetails } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/types-typeAliases-interface'
+import { viewUserData } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/fetchApiResponse'
 
 function App() {
   const propsData = {
@@ -41,6 +42,7 @@ function App() {
       {printValuesInConsole() ?? null}
       {printCoordinates() ?? null}
       {printOrderDetails() ?? null}
+      {viewUserData() ?? null}
     </div>
   )
 }
