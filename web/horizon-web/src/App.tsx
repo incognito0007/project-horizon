@@ -2,6 +2,7 @@ import UnderstandingJsx from './day-to-day-learning/01-jsx-functComponents-props
 import FunctionalComponent from './day-to-day-learning/01-jsx-functComponents-props/FunctionalComponent'
 import UnderstandingProps from './day-to-day-learning/01-jsx-functComponents-props/UnderstandingProps'
 import Card from './components/Card'
+import { printValuesInConsole } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/types'
 
 function App() {
   const propsData = {
@@ -35,6 +36,7 @@ function App() {
       {CardData.map((data, index) => (
         <Card key={index} {...data} />
       ))}
+      {printValuesInConsole() ?? null}
     </div>
   )
 }
