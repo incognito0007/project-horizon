@@ -24,11 +24,22 @@ class MasalaChai implements TeaRecipe {
   milk = 50
 }
 
+interface cupSize {
+  size: 'small' | 'medium' | 'large'
+}
+
+class ChaiCup implements cupSize {
+  size: cupSize['size'] = 'small'
+}
+
 function printOrderDetails() {
   console.log(makeChai({ type: 'Masala Chai', sugar: 2, strong: true }))
   console.log(serveChai({ type: 'Ginger Chai', sugar: 1, strong: false }))
   const masalaChai = new MasalaChai()
   console.log(`Masala Chai Recipe: Water - ${masalaChai.water}ml, Milk - ${masalaChai.milk}ml`)
+  const chaiCup = new ChaiCup()
+  chaiCup.size = 'medium'
+  console.log(`Chai Cup Size: ${chaiCup.size}`)
 }
 
 export { printOrderDetails }
