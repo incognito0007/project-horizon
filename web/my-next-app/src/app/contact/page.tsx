@@ -1,12 +1,17 @@
-import Link from "next/link";
-
 export default function Contact() {
   return (
-    <main>
-      <h1>Contact Page</h1>
-      <p>Email: ankit@example.com</p>
+    <section>
+      <h1 className="text-4xl font-bold mb-8">Contact Me</h1>
 
-      <Link href="/">Home</Link>
-    </main>
+      <div className="bg-white text-gray-700 leading-8 p-8 rounded-2xl shadow-md space-y-4">
+        <p>Email: ankit@example.com</p>
+        <p>LinkedIn: linkedin.com/in/ankit</p>
+        <p>Location: Pune, India</p>
+
+        <button className="bg-green-600 text-white px-5 py-3 rounded-xl hover:bg-green-700 transition">
+          Hire Me
+        </button>
+      </div>
+    </section>
   );
 }
