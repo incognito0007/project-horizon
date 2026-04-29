@@ -1,20 +1,15 @@
-type UserProps = {
-  name: string;
-};
-
-function WelcomeCard({ name }: UserProps) {
-  return (
-    <div style={{ padding: "20px", border: "1px solid #ccc" }}>
-      <h1>Hello, {name}</h1>
-      <p>Welcome to Next.js + TypeScript</p>
-    </div>
-  );
-}
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
-      <WelcomeCard name="Ankit" />
+      <h1>Home Page</h1>
+      <p>Welcome to my Next.js app!</p>
+
+      <nav>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
     </main>
   );
 }
