@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class PrimitiveDatatype {
 
-    static int sum(int a, int b) {
+    public static int sum(int a, int b) {
         return a + b;
     }
 
