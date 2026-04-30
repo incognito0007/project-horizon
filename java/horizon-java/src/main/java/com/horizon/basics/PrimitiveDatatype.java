@@ -1,8 +1,14 @@
 package com.horizon.basics;
+import java.util.Scanner;
 
 public class PrimitiveDatatype {
-    public static void main(String[] args) {
 
+    static int sum(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        
         // Primitive data types in Java include:
         // byte, short, int, long, float, double, char, boolean
         int num = 10;
@@ -41,5 +47,14 @@ public class PrimitiveDatatype {
         System.out.println("Type of pi: " + ((Object)pi).getClass().getSimpleName());
         System.out.println("Type of shortNum: " + ((Object)shortNum).getClass().getSimpleName());
         System.out.println("Type of byteNum: " + ((Object)byteNum).getClass().getSimpleName());
+
+        // Calling the sum method
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+        int result = sum(a, b);
+        System.out.println("Sum: " + result);
     }
 }
