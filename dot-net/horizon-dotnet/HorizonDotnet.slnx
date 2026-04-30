@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HorizonDotnet.Api/HorizonDotnet.Api.csproj" />
+    <Project Path="src/HorizonDotnet.Console/HorizonDotnet.Console.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/HorizonDotnet.Tests/HorizonDotnet.Tests.csproj" />
+  </Folder>
+</Solution>
