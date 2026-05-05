@@ -6,6 +6,7 @@ import { printValuesInConsole } from './day-to-day-learning/02-ts-types-interfac
 import { printCoordinates } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/typesAliases'
 import { printOrderDetails } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/types-typeAliases-interface'
 import { viewUserData } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/fetchApiResponse'
+import Counter from './day-to-day-learning/03-useState-useReducer-todoApp/Counter'
 
 function App() {
   const propsData = {
@@ -43,6 +44,7 @@ function App() {
       {printCoordinates() ?? null}
       {printOrderDetails() ?? null}
       {viewUserData() ?? null}
+      <Counter />
     </div>
   )
 }
