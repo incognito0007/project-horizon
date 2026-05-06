@@ -8,6 +8,7 @@ import { printOrderDetails } from './day-to-day-learning/02-ts-types-interfaces-
 import { viewUserData } from './day-to-day-learning/02-ts-types-interfaces-typeAliases/fetchApiResponse'
 import Counter from './day-to-day-learning/03-useState-useReducer-todoApp/Counter'
 import UseReducerHooks from './day-to-day-learning/03-useState-useReducer-todoApp/UseReducerHooks'
+import { printChaiDetails } from './day-to-day-learning/04-generics-and-interfaces/interface'
 
 function App() {
   const propsData = {
@@ -47,6 +48,7 @@ function App() {
       {viewUserData() ?? null}
       <Counter />
       <UseReducerHooks />
+      {printChaiDetails() ?? null}
     </div>
   )
 }
