@@ -1,8 +1,14 @@
 import "./App.css";
-import ToDoApp from "./components/ToDoApp";
+import TaskApp from "./components/TaskApp";
+// import ToDoApp from "./components/ToDoApp";
 
 function App() {
-  return <ToDoApp />;
+  return (
+    <div>
+      {/* <ToDoApp /> */}
+      <TaskApp />
+    </div>
+  );
 }
 
 export default App;
