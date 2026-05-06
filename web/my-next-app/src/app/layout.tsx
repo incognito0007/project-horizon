@@ -20,6 +20,9 @@ export default function RootLayout({
               <Link href="/about" className="hover:text-emerald-400 transition">
                 About
               </Link>
+              <Link href="/info" className="hover:text-emerald-400 transition">
+                Info
+              </Link>
               <Link
                 href="/contact"
                 className="hover:text-emerald-400 transition"
