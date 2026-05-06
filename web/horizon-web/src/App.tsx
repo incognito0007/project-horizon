@@ -10,6 +10,7 @@ import Counter from './day-to-day-learning/03-useState-useReducer-todoApp/Counte
 import UseReducerHooks from './day-to-day-learning/03-useState-useReducer-todoApp/UseReducerHooks'
 import { printChaiDetails } from './day-to-day-learning/04-generics-and-interfaces/interface'
 import { printGenericsDetails } from './day-to-day-learning/04-generics-and-interfaces/generics'
+import { printApiResponseDetails } from './day-to-day-learning/04-generics-and-interfaces/apiResponseWrapper'
 
 function App() {
   const propsData = {
@@ -51,6 +52,7 @@ function App() {
       <UseReducerHooks />
       {printChaiDetails() ?? null}
       {printGenericsDetails() ?? null}
+      {printApiResponseDetails() ?? null}
     </div>
   )
 }
