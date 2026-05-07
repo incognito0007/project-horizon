@@ -1,4 +1,8 @@
-const UserPage = () => {
+const waitFor = (sec: number) =>
+  new Promise((resolve) => setTimeout(resolve, sec * 1000));
+
+const UserPage = async () => {
+  await waitFor(5); // Simulate a delay for loading data
   return (
     <div>
       <h1 className="text-2xl font-bold">Dashboard User</h1>
