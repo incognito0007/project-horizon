@@ -4,7 +4,9 @@ public class AsynchronousProgram
 {
     public static async Task RunAsynchronousTasks(string[] args)
     {
+        Console.WriteLine("Running asynchronous tasks...");
         await Task.WhenAll(Task1(), Task2(), Task3());
+        Console.WriteLine("All tasks completed.");
     }
 
     public static async Task Task1()
