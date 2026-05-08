@@ -14,6 +14,13 @@ public class StudentClass {
         System.out.println(student1.name); // This will print null because name is a String and it is initialized to null by default.
         System.out.println(student1.marks); // This will print 0 because marks is an int and it is initialized to 0 by default.
         
+        Students student2 = new Students();
+        student2.rollNo = 2;
+        student2.name = "Alice";
+        student2.marks = 90;
+        System.out.println(student2.rollNo); // This will print 2
+        System.out.println(student2.name); // This will print Alice
+        System.out.println(student2.marks); // This will print 90
 
         // System.out.println(Arrays.toString(students)); // This will print null because student1 is not initialized.
     }
