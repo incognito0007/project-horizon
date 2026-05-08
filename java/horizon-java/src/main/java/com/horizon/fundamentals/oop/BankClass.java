@@ -26,7 +26,7 @@ class Bank {
 class UserAccount {
     String userName;
     String accountNumber;
-    Bank bank;
+    Bank bank; // This is an example of composition. The UserAccount class has a reference to the Bank class, which means that a user account is associated with a bank.
     double balance;
 
     double interest() {
