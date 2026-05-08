@@ -18,14 +18,14 @@ class StudentConstructor{
 
     // Constructor
     // A constructor is a special method that is called when an object is created. It is used to initialize the object. The name of the constructor is the same as the name of the class and it does not have a return type.
-    StudentConstructor() {
+    StudentConstructor() { // this constructor will initialized when we create an object of the StudentConstructor class without passing any parameters.
         this.rollNo = 12;
         this.name = "Ankit";
         this.marks = 70;
     }
 
     // We can also use parameterized constructor to initialize the object with different values.
-    StudentConstructor(int rollNo, String name, int marks) {
+    StudentConstructor(int rollNo, String name, int marks) { // this constructor will initialized when we create an object of the StudentConstructor class by passing parameters.
         this.rollNo = rollNo;
         this.name = name;
         this.marks = marks;
