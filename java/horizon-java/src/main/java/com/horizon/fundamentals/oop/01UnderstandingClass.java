@@ -10,6 +10,16 @@ public class 01UnderstandindClass{
 
         // data of 5 students: {roll no, name, marks}
         int[] marks = new int[5];
-        
+
+        // This is not a good way to store data of students. We can create a class to represent a student and store the data in an object of that class.
+
+        Student student1 = new Student();
     }
+}
+
+//creating a class to represent a student
+class Student{
+    int[] rollNos = new int[5];
+    String[] names = new String[5];
+    int[] marks = new int[5];
 }
