@@ -1,3 +1,5 @@
+cd horizon\dot-net\horizon-dotnet
+
 # Run console practice
 
 dotnet run --project src/HorizonDotnet.Console
