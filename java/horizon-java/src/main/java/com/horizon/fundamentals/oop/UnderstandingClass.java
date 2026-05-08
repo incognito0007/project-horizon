@@ -1,6 +1,6 @@
 package com.horizon.fundamentals.oop;
 
-public class 01UnderstandindClass{
+public class UnderstandingClass{
     public static void main(String[] args) {
         // Store 5 roll nos
         int[] rollNos = new int[5];
@@ -14,6 +14,13 @@ public class 01UnderstandindClass{
         // This is not a good way to store data of students. We can create a class to represent a student and store the data in an object of that class.
 
         Student student1 = new Student();
+        student1.rollNos[0] = 1;
+        student1.names[0] = "John";
+        student1.marks[0] = 85;
+
+        System.out.println("Roll No: " + student1.rollNos[0]);
+        System.out.println("Name: " + student1.names[0]);
+        System.out.println("Marks: " + student1.marks[0]);
     }
 }
 
