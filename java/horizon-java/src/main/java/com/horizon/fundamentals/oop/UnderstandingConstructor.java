@@ -8,6 +8,10 @@ public class UnderstandingConstructor{
         // We can also create an object of the StudentConstructor class using the parameterized constructor to initialize the object with different values.
         StudentConstructor student2 = new StudentConstructor(2, "Alice", 90);
         System.out.println("Roll No: " + student2.rollNo + ", Name: " + student2.name + ", Marks: " + student2.marks); // This will print Roll No: 2, Name: Alice, Marks: 90 because the parameterized constructor initializes the object with these values.
+
+        // We can also create an object of the StudentConstructor class using the copy constructor to initialize the object with the values of another object.
+        StudentConstructor student3 = new StudentConstructor(student2);
+        System.out.println("Roll No: " + student3.rollNo + ", Name: " + student3.name + ", Marks: " + student3.marks); // This will print Roll No: 2, Name: Alice, Marks: 90 because the copy constructor initializes the object with the values of student2 object.
     }
 }
 
@@ -29,5 +33,11 @@ class StudentConstructor{
         this.rollNo = rollNo;
         this.name = name;
         this.marks = marks;
+    }
+
+    StudentConstructor(StudentConstructor other) { // this constructor will initialized when we create an object of the StudentConstructor class by passing another object of the StudentConstructor class. This is called copy constructor.
+        this.rollNo = other.rollNo;
+        this.name = other.name;
+        this.marks = other.marks;
     }
 }
