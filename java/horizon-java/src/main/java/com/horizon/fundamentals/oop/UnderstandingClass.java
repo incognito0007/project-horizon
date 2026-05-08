@@ -14,19 +14,19 @@ public class UnderstandingClass{
         // This is not a good way to store data of students. We can create a class to represent a student and store the data in an object of that class.
 
         Student student1 = new Student();
-        student1.rollNos[0] = 1;
-        student1.names[0] = "John";
-        student1.marks[0] = 85;
+        student1.rollNos = 1;
+        student1.names = "John";
+        student1.marks = 85;
 
-        System.out.println("Roll No: " + student1.rollNos[0]);
-        System.out.println("Name: " + student1.names[0]);
-        System.out.println("Marks: " + student1.marks[0]);
+        System.out.println("Roll No: " + student1.rollNos);
+        System.out.println("Name: " + student1.names);
+        System.out.println("Marks: " + student1.marks);
     }
 }
 
 //creating a class to represent a student
 class Student{
-    int[] rollNos = new int[5];
-    String[] names = new String[5];
-    int[] marks = new int[5];
+    int rollNos;
+    String names;
+    int marks;
 }
