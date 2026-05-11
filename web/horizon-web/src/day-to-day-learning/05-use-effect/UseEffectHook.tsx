@@ -1,16 +1,18 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function UseEffectHook() {
+  const [count, setCount] = useState(0)
+
   useEffect(() => {
     // side effect logic goes here
-    console.log('useEffect hook is running')
+    console.log('Count value has changed:', count)
 
     //We will look into cleanup function in the next section when we will discuss about component unmounting and cleanup logic.
     // return () => {
     //   // cleanup logic goes here
     //   console.log('Cleaning up resources')
     // }
-  }, [])
+  }, [count])
 
   return (
     <div className="component">
@@ -35,6 +37,9 @@ export default function UseEffectHook() {
         dependency array, the effect will run after every render, which can lead to performance
         issues if not used carefully.
       </p>
+
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
     </div>
   )
 }
