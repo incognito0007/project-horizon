@@ -22,6 +22,8 @@ import PokemonApp from './day-to-day-learning/05-use-effect/PokemonCard/PokemonA
 import { printUser } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/partial'
 import { printUserSettings } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/required'
 import { printTodoDetails } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/readonly'
+import { printUserWithoutIdWrapper } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/omitAndPick'
+import { printUserWithNameOrAgeWrapper } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/omitAndPick'
 
 function App() {
   const propsData = {
@@ -81,6 +83,8 @@ function App() {
       {printUser() ?? null}
       {printUserSettings() ?? null}
       {printTodoDetails() ?? null}
+      {printUserWithoutIdWrapper() ?? null}
+      {printUserWithNameOrAgeWrapper() ?? null}
     </div>
   )
 }
