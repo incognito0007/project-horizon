@@ -21,6 +21,7 @@ import FetchApiData from './day-to-day-learning/05-use-effect/PokemonCard/FetchA
 import PokemonApp from './day-to-day-learning/05-use-effect/PokemonCard/PokemonApp'
 import { printUser } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/partial'
 import { printUserSettings } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/required'
+import { printTodoDetails } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/readonly'
 
 function App() {
   const propsData = {
@@ -79,6 +80,7 @@ function App() {
       <PokemonApp />
       {printUser() ?? null}
       {printUserSettings() ?? null}
+      {printTodoDetails() ?? null}
     </div>
   )
 }
