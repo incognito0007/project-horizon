@@ -14,7 +14,13 @@ const UseEffectCleanupFunction = () => {
   //   }, 1000)
 
   useEffect(() => {
-    return () => {}
+    const timer = setInterval(() => {
+      setCount(prev => prev + 1)
+    }, 1000)
+
+    return () => {
+      clearInterval(timer)
+    }
   }, [])
 
   return (
