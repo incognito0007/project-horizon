@@ -19,6 +19,7 @@ import UseEffectCleanupFunction from './day-to-day-learning/05-use-effect/UseEff
 // import HowNotToFetchApi from './day-to-day-learning/05-use-effect/PokemonCard/HowNotToFetchApi'
 import FetchApiData from './day-to-day-learning/05-use-effect/PokemonCard/FetchApiData'
 import PokemonApp from './day-to-day-learning/05-use-effect/PokemonCard/PokemonApp'
+import { printUser } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/partial'
 
 function App() {
   const propsData = {
@@ -75,6 +76,7 @@ function App() {
       potentially crashing the application. */}
       <FetchApiData />
       <PokemonApp />
+      {printUser() ?? null}
     </div>
   )
 }
