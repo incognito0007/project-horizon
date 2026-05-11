@@ -13,6 +13,7 @@ import { printGenericsDetails } from './day-to-day-learning/04-generics-and-inte
 import { printApiResponseDetails } from './day-to-day-learning/04-generics-and-interfaces/apiResponseWrapper'
 import PractiseApp from './day-to-day-learning/05-use-effect/PractiseApplication/PractiseApp'
 import UseEffectHook from './day-to-day-learning/05-use-effect/UseEffectHook'
+import UseEffectChangingDate from './day-to-day-learning/05-use-effect/UseEffectChangingDate'
 
 function App() {
   const propsData = {
@@ -57,6 +58,7 @@ function App() {
       {printApiResponseDetails() ?? null}
       <PractiseApp />
       <UseEffectHook />
+      <UseEffectChangingDate />
     </div>
   )
 }
