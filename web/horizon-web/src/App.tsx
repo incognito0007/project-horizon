@@ -18,6 +18,7 @@ import UseEffectChallenge from './day-to-day-learning/05-use-effect/UseEffectCha
 import UseEffectCleanupFunction from './day-to-day-learning/05-use-effect/UseEffectCleanupFunction'
 // import HowNotToFetchApi from './day-to-day-learning/05-use-effect/PokemonCard/HowNotToFetchApi'
 import FetchApiData from './day-to-day-learning/05-use-effect/PokemonCard/FetchApiData'
+import PokemonApp from './day-to-day-learning/05-use-effect/PokemonCard/PokemonApp'
 
 function App() {
   const propsData = {
@@ -73,6 +74,7 @@ function App() {
       an infinite loop of fetching data and updating state, causing performance issues and
       potentially crashing the application. */}
       <FetchApiData />
+      <PokemonApp />
     </div>
   )
 }
