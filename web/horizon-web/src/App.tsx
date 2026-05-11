@@ -15,6 +15,7 @@ import PractiseApp from './day-to-day-learning/05-use-effect/PractiseApplication
 import UseEffectHook from './day-to-day-learning/05-use-effect/UseEffectHook'
 import UseEffectChangingDate from './day-to-day-learning/05-use-effect/UseEffectChangingDate'
 import UseEffectChallenge from './day-to-day-learning/05-use-effect/UseEffectChallenge'
+import UseEffectCleanupFunction from './day-to-day-learning/05-use-effect/UseEffectCleanupFunction'
 
 function App() {
   const propsData = {
@@ -61,6 +62,7 @@ function App() {
       <UseEffectHook />
       <UseEffectChangingDate />
       <UseEffectChallenge />
+      <UseEffectCleanupFunction />
     </div>
   )
 }
