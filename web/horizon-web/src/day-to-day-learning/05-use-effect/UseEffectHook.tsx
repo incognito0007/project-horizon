@@ -5,10 +5,11 @@ export default function UseEffectHook() {
     // side effect logic goes here
     console.log('useEffect hook is running')
 
-    return () => {
-      // cleanup logic goes here
-      console.log('Cleaning up resources')
-    }
+    //We will look into cleanup function in the next section when we will discuss about component unmounting and cleanup logic.
+    // return () => {
+    //   // cleanup logic goes here
+    //   console.log('Cleaning up resources')
+    // }
   }, [])
 
   return (
