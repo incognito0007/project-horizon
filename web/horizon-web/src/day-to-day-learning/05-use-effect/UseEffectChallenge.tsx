@@ -10,9 +10,10 @@ export default function UseEffectChallenge() {
   }, [name])
 
   // Challenge: Update the document title with the count value whenever it changes
-  useEffect(() => {
-    document.title = `Count: ${count}`
-  }, [count])
+  //   useEffect(() => {
+  //     document.title = `Count: ${count}`
+  //   }, [count])
+  // Note: The above useEffect is commented out to avoid side effects in the document title. You can uncomment it to see the effect in action.
 
   return (
     <div className="component">
