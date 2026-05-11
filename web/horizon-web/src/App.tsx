@@ -11,6 +11,7 @@ import UseReducerHooks from './day-to-day-learning/03-useState-useReducer-todoAp
 import { printChaiDetails } from './day-to-day-learning/04-generics-and-interfaces/interface'
 import { printGenericsDetails } from './day-to-day-learning/04-generics-and-interfaces/generics'
 import { printApiResponseDetails } from './day-to-day-learning/04-generics-and-interfaces/apiResponseWrapper'
+import PractiseApp from './day-to-day-learning/05-use-effect/PractiseApplication/PractiseApp'
 
 function App() {
   const propsData = {
@@ -53,6 +54,7 @@ function App() {
       {printChaiDetails() ?? null}
       {printGenericsDetails() ?? null}
       {printApiResponseDetails() ?? null}
+      <PractiseApp />
     </div>
   )
 }
