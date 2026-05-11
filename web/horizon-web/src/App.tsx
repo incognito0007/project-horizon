@@ -12,6 +12,7 @@ import { printChaiDetails } from './day-to-day-learning/04-generics-and-interfac
 import { printGenericsDetails } from './day-to-day-learning/04-generics-and-interfaces/generics'
 import { printApiResponseDetails } from './day-to-day-learning/04-generics-and-interfaces/apiResponseWrapper'
 import PractiseApp from './day-to-day-learning/05-use-effect/PractiseApplication/PractiseApp'
+import UseEffectHook from './day-to-day-learning/05-use-effect/UseEffectHook'
 
 function App() {
   const propsData = {
@@ -55,6 +56,7 @@ function App() {
       {printGenericsDetails() ?? null}
       {printApiResponseDetails() ?? null}
       <PractiseApp />
+      <UseEffectHook />
     </div>
   )
 }
