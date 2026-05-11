@@ -16,6 +16,7 @@ import UseEffectHook from './day-to-day-learning/05-use-effect/UseEffectHook'
 import UseEffectChangingDate from './day-to-day-learning/05-use-effect/UseEffectChangingDate'
 import UseEffectChallenge from './day-to-day-learning/05-use-effect/UseEffectChallenge'
 import UseEffectCleanupFunction from './day-to-day-learning/05-use-effect/UseEffectCleanupFunction'
+// import HowNotToFetchApi from './day-to-day-learning/05-use-effect/PokemonCard/HowNotToFetchApi'
 
 function App() {
   const propsData = {
@@ -63,6 +64,13 @@ function App() {
       <UseEffectChangingDate />
       <UseEffectChallenge />
       <UseEffectCleanupFunction />
+      {/* <HowNotToFetchApi /> Not adding this component on App.tsx, because it will cause an
+      infinite loop of fetching data and updating state, causing performance issues and potentially
+      crashing the application. You can see in your network tab that the API is being called
+      multiple times, which is not ideal. This is because the fetch call is inside the component
+      body, and every time the component re-renders, it triggers a new fetch call. this will lead to
+      an infinite loop of fetching data and updating state, causing performance issues and
+      potentially crashing the application. */}
     </div>
   )
 }
