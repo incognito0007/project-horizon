@@ -60,11 +60,11 @@ horizon-dotnet/
 ## Commit style
 
 ```
-[dotnet/linq] GroupBy and projection exercises on mock data
-[dotnet/aspnet] Products CRUD API with minimal API
-[dotnet/ef] Repository pattern implementation with SQLite
-[dotnet/testing] xUnit tests for service layer with Moq
-[dotnet/architecture] Refactor to clean architecture layers
+[dotnet] GroupBy and projection exercises on mock data
+[dotnet] Products CRUD API with minimal API
+[dotnet] Repository pattern implementation with SQLite
+[dotnet] xUnit tests for service layer with Moq
+[dotnet] Refactor to clean architecture layers
 ```
 
 ---
