@@ -12,6 +12,6 @@ public class DemoApp
         person.School = new School(); // this is called property injection because we are injecting the School class through the property of the Person class
         person.Study();
         
-        person.GetTreatment();
+        person.GetTreatment(new Hospital()); // this is called method injection because we are injecting the Hospital class through the method of the Person class
     }
 }
