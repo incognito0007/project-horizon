@@ -3,4 +3,5 @@
 // OfficeDataProcessing.Run();
 // SynchronousProgram.RunSynchronousTasks(args);
 // await AsynchronousProgram.RunAsynchronousTasks(args);
-await CancellationTokenDemo.Run();
+// await CancellationTokenDemo.Run();
+DemoApp.Run(args);
