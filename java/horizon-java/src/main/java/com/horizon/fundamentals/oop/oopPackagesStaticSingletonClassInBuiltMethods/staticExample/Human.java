@@ -5,13 +5,13 @@ public class Human{
     int age;
     int salary;
     boolean married;
-    long population;
+    static long population; // static variable --> Independent of objects
 
     Human(String name, int age, int salary, boolean married) {
         this.name = name;
         this.age = age;
         this.salary = salary;
         this.married = married;
-        this.population += 1;
+        Human.population += 1; //No need to use this keyword here as it is a static variable, we will call this directly using class
     }
 }
