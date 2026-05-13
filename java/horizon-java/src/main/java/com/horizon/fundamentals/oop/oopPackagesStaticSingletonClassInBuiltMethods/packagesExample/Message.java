@@ -1,4 +1,4 @@
-package com.horizon.fundamentals.oop.oopPackagesStaticSingletonClassInBuiltMethods;
+package com.horizon.fundamentals.oop.oopPackagesStaticSingletonClassInBuiltMethods.packagesExample;
 
 public class Message {
     public static void main(String[] args) {
