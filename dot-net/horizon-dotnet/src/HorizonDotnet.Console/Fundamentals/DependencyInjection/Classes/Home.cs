@@ -1,6 +1,6 @@
-public class Home
+public class Home: IHome
 {
-    internal void ProvideShelter(Person person)
+    public void ProvideShelter(Person person)
     {
         Console.WriteLine("Providing shelter to the person.");
     }

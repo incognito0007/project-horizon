@@ -1,4 +1,4 @@
-public class College: IEducationalInstitution
+public class College: ICollege
 {
     public void Teach(Person person)
     {
