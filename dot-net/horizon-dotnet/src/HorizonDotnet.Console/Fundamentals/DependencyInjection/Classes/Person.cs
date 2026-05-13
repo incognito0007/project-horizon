@@ -73,5 +73,5 @@ public class Person: IPerson
     }
 }
 
-// In the final commit --> 
+// In the final commit --> [dotnet] feat: implement dependency injection using Autofac and create educational institution classes
 // We are now using a dependency injection container called Autofac to manage the dependencies of the Person class and we are registering the dependencies in the ContainerConfiguration class and we are resolving the dependencies in the DemoApp class which will reduce the coupling and increase the flexibility of the code because now we can easily change the implementation of the dependencies without changing the Person class which is called dependency inversion principle
