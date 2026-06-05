@@ -1,3 +1,1 @@
-type Mood = "great" | "okay" | "struggling";
-
-export type { Mood };
+export type Mood = "great" | "okay" | "struggling";

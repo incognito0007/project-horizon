@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import JournalEntry from "@/types/journalEntry";
 
+type NewEntryInput = Omit<JournalEntry, "id" | "date">;
+
 const entries: JournalEntry[] = [
   {
     id: "1",
@@ -39,4 +41,26 @@ export async function GET() {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return NextResponse.json(sorted, { status: 200 });
+}
+
+export async function POST(request: Request) {
+  const body = (await request.json()) as NewEntryInput;
+
+  // Basic validation
+  if (!body.title || !body.summary || body.stack.length === 0) {
+    return NextResponse.json(
+      { error: "Title, summary and at least one stack tag are required" },
+      { status: 400 },
+    );
+  }
+
+  const newEntry: JournalEntry = {
+    id: crypto.randomUUID(),
+    date: new Date().toISOString(),
+    ...body,
+  };
+
+  entries.push(newEntry);
+
+  return NextResponse.json(newEntry, { status: 201 });
 }
