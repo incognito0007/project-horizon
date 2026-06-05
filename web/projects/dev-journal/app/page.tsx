@@ -1,66 +1,65 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { EntryCard } from "@/components/EntryCard";
+import JournalEntry from "@/types/journalEntry";
 
-export default function Home() {
+async function getEntries(): Promise<JournalEntry[]> {
+  const res = await fetch("http://localhost:3000/api/entries", {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch entries");
+  return res.json() as Promise<JournalEntry[]>;
+}
+export default async function HomePage() {
+  const entries = await getEntries();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main style={{ maxWidth: "680px", margin: "0 auto", padding: "40px 20px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "32px",
+        }}
+      >
+        <div>
+          <h1 style={{ fontSize: "24px", fontWeight: 700, margin: 0 }}>
+            DevJournal
+          </h1>
+          <p style={{ color: "#888", fontSize: "14px", margin: "4px 0 0" }}>
+            {entries.length} {entries.length === 1 ? "entry" : "entries"}
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <Link
+          href="/add"
+          style={{
+            background: "#1a1a1a",
+            color: "#fff",
+            padding: "10px 18px",
+            borderRadius: "6px",
+            textDecoration: "none",
+            fontSize: "14px",
+            fontWeight: 500,
+          }}
+        >
+          + Add Entry
+        </Link>
+      </div>
+
+      {entries.length === 0 ? (
+        <div style={{ textAlign: "center", padding: "60px 0", color: "#888" }}>
+          <p style={{ fontSize: "16px" }}>No entries yet.</p>
+          <p style={{ fontSize: "14px", marginTop: "8px" }}>
+            Start logging your learning!
+          </p>
         </div>
-      </main>
-    </div>
+      ) : (
+        <div>
+          {entries.map((entry) => (
+            <EntryCard key={entry.id} entry={entry} />
+          ))}
+        </div>
+      )}
+    </main>
   );
 }
