@@ -3,9 +3,14 @@ import { EntryCard } from "@/components/EntryCard";
 import type { JournalEntry } from "@/types/journal";
 
 async function getEntries(): Promise<JournalEntry[]> {
-  const res = await fetch("http://localhost:3000/api/entries", {
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
+  const res = await fetch(`${baseUrl}/api/entries`, {
     cache: "no-store",
   });
+
   if (!res.ok) throw new Error("Failed to fetch entries");
   return res.json() as Promise<JournalEntry[]>;
 }
