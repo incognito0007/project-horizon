@@ -77,7 +77,7 @@ function formReducer(state: FormState, action: FormAction): FormState {
   }
 }
 
-interface UseJournalFormResult {
+export interface UseJournalFormResult {
   draft: DraftEntry;
   submitting: boolean;
   error: string | null;

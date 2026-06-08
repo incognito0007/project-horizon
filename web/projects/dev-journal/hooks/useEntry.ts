@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { JournalEntry } from "@/types/journal";
 
-interface UseEntryResult {
+export interface UseEntryResult {
   entry: JournalEntry | null;
   loading: boolean;
   error: string | null;
