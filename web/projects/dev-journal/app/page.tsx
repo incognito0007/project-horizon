@@ -1,21 +1,9 @@
 import Link from "next/link";
 import { EntryCard } from "@/components/EntryCard";
-import type { JournalEntry } from "@/types/journal";
+import { getEntries } from "@/lib/entries";
 
-async function getEntries(): Promise<JournalEntry[]> {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-
-  const res = await fetch(`${baseUrl}/api/entries`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) throw new Error("Failed to fetch entries");
-  return res.json() as Promise<JournalEntry[]>;
-}
-export default async function HomePage() {
-  const entries = await getEntries();
+export default function HomePage() {
+  const entries = getEntries();
 
   return (
     <main style={{ maxWidth: "680px", margin: "0 auto", padding: "40px 20px" }}>
