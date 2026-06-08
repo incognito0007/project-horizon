@@ -86,7 +86,7 @@ export default function EntryPage({ params }: EntryPageProps) {
           marginBottom: "16px",
         }}
       >
-        {entry.stack.map((s) => (
+        {entry.stack.map((s: string) => (
           <StackBadge key={s} stack={s} />
         ))}
       </div>

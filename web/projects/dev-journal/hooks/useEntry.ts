@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import JournalEntry from "../types/journalEntry";
+import type { JournalEntry } from "@/types/journal";
 
 interface UseEntryResult {
   entry: JournalEntry | null;

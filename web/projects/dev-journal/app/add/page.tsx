@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useJournalForm } from "@/hooks/useJournalForm";
 import { Button } from "@/components/Button";
-import { Stack } from "@/types/stack";
-import { Mood } from "@/types/mood";
+import type { Stack } from "@/types/journal";
+import type { Mood } from "@/types/journal";
 
 const ALL_STACKS: Stack[] = [
   "React",

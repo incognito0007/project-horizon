@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import JournalEntry from "@/types/journalEntry";
+import type { JournalEntry, NewEntryInput, ApiResponse } from "@/types/journal";
 
-type NewEntryInput = Omit<JournalEntry, "id" | "date">;
-
+// Readonly — nobody should mutate this array directly
 const entries: JournalEntry[] = [
   {
     id: "1",
@@ -37,20 +36,29 @@ const entries: JournalEntry[] = [
 ];
 
 export async function GET() {
-  const sorted = [...entries].sort(
+  const sorted: Readonly<JournalEntry[]> = [...entries].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
-  return NextResponse.json(sorted, { status: 200 });
+
+  const response: ApiResponse<JournalEntry[]> = {
+    data: sorted as JournalEntry[],
+    status: 200,
+  };
+
+  return NextResponse.json(response.data, { status: response.status });
 }
 
 export async function POST(request: Request) {
   const body = (await request.json()) as NewEntryInput;
 
-  // Basic validation
   if (!body.title || !body.summary || body.stack.length === 0) {
+    const response: ApiResponse<never> = {
+      error: "Title, summary and at least one stack tag are required",
+      status: 400,
+    };
     return NextResponse.json(
-      { error: "Title, summary and at least one stack tag are required" },
-      { status: 400 },
+      { error: response.error },
+      { status: response.status },
     );
   }
 
@@ -62,5 +70,10 @@ export async function POST(request: Request) {
 
   entries.push(newEntry);
 
-  return NextResponse.json(newEntry, { status: 201 });
+  const response: ApiResponse<JournalEntry> = {
+    data: newEntry,
+    status: 201,
+  };
+
+  return NextResponse.json(response.data, { status: response.status });
 }
