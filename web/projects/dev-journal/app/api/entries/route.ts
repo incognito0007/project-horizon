@@ -36,12 +36,14 @@ const entries: JournalEntry[] = [
 ];
 
 export async function GET() {
-  const sorted: Readonly<JournalEntry[]> = [...entries].sort(
+  const readonlyEntries: Readonly<JournalEntry[]> = entries;
+
+  const sorted = [...readonlyEntries].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   const response: ApiResponse<JournalEntry[]> = {
-    data: sorted as JournalEntry[],
+    data: sorted,
     status: 200,
   };
 
