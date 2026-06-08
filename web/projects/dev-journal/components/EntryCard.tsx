@@ -1,10 +1,10 @@
 import Link from "next/link";
-import JournalEntry from "@/types/journalEntry";
+import type { JournalEntry } from "@/types/journal";
 import { StackBadge } from "@/components/StackBadge";
 import { MoodIndicator } from "@/components/MoodIndicator";
 import { formatDate } from "@/utils/formatDate";
 
-interface EntryCardProps {
+export interface EntryCardProps {
   entry: Pick<
     JournalEntry,
     "id" | "title" | "date" | "stack" | "mood" | "timeSpentMins"

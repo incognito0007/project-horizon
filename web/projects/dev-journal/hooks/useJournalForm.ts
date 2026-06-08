@@ -1,7 +1,7 @@
 import { useReducer } from "react";
-import type { NewEntryInput, DraftEntry } from "../types/newEntry";
-import { Stack } from "../types/stack";
-import { Mood } from "../types/mood";
+import type { NewEntryInput, DraftEntry } from "../types/journal";
+import type { Stack } from "../types/journal";
+import type { Mood } from "../types/journal";
 
 interface FormState {
   draft: DraftEntry;

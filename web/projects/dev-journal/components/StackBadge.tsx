@@ -1,6 +1,6 @@
-import { Stack } from "../types/stack";
+import type { Stack } from "@/types/journal";
 
-interface StackBadgeProps {
+export interface StackBadgeProps {
   stack: Stack;
 }
 

@@ -7,6 +7,7 @@ import { StackBadge } from "@/components/StackBadge";
 import { MoodIndicator } from "@/components/MoodIndicator";
 import { Button } from "@/components/Button";
 import { formatDate } from "@/utils/formatDate";
+import type { Stack } from "@/types/journal";
 
 interface EntryPageProps {
   params: Promise<{ id: string }>;
@@ -86,7 +87,7 @@ export default function EntryPage({ params }: EntryPageProps) {
           marginBottom: "16px",
         }}
       >
-        {entry.stack.map((s: string) => (
+        {entry.stack.map((s: Stack) => (
           <StackBadge key={s} stack={s} />
         ))}
       </div>

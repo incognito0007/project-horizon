@@ -1,6 +1,6 @@
-import { Mood } from "../types/mood";
+import type { Mood } from "@/types/journal";
 
-interface MoodIndicatorProps {
+export interface MoodIndicatorProps {
   mood: Mood;
 }
 

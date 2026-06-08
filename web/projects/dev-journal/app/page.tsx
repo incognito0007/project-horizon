@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntryCard } from "@/components/EntryCard";
-import JournalEntry from "@/types/journalEntry";
+import type { JournalEntry } from "@/types/journal";
 
 async function getEntries(): Promise<JournalEntry[]> {
   const res = await fetch("http://localhost:3000/api/entries", {
