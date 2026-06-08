@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { JournalEntry } from "@/types/journal";
-import { StackBadge } from "@/components/StackBadge";
-import { MoodIndicator } from "@/components/MoodIndicator";
+import { StackBadge } from "./StackBadge";
+import { MoodIndicator } from "./MoodIndicator";
 import { formatDate } from "@/utils/formatDate";
 
 export interface EntryCardProps {
@@ -16,12 +16,12 @@ export function EntryCard({ entry }: EntryCardProps) {
     <Link href={`/entry/${entry.id}`} style={{ textDecoration: "none" }}>
       <div
         style={{
-          border: "1px solid #E2E2E2",
-          borderRadius: "8px",
-          padding: "16px",
-          marginBottom: "12px",
-          background: "#fff",
+          border: "1px solid var(--border)",
+          borderRadius: "12px",
+          padding: "16px 20px",
+          background: "var(--surface)",
           cursor: "pointer",
+          transition: "border-color 0.15s",
         }}
       >
         <div
@@ -29,14 +29,16 @@ export function EntryCard({ entry }: EntryCardProps) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-start",
+            marginBottom: "10px",
           }}
         >
           <h3
             style={{
               fontSize: "15px",
               fontWeight: 600,
-              color: "#1a1a1a",
+              color: "var(--text-primary)",
               margin: 0,
+              lineHeight: 1.4,
             }}
           >
             {entry.title}
@@ -44,9 +46,9 @@ export function EntryCard({ entry }: EntryCardProps) {
           <span
             style={{
               fontSize: "12px",
-              color: "#888",
+              color: "var(--text-muted)",
               flexShrink: 0,
-              marginLeft: "12px",
+              marginLeft: "16px",
             }}
           >
             {formatDate(entry.date)}
@@ -58,7 +60,7 @@ export function EntryCard({ entry }: EntryCardProps) {
             display: "flex",
             gap: "6px",
             flexWrap: "wrap",
-            margin: "10px 0",
+            marginBottom: "12px",
           }}
         >
           {entry.stack.map((s) => (
@@ -74,7 +76,7 @@ export function EntryCard({ entry }: EntryCardProps) {
           }}
         >
           <MoodIndicator mood={entry.mood} />
-          <span style={{ fontSize: "12px", color: "#888" }}>
+          <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>
             ⏱ {entry.timeSpentMins} mins
           </span>
         </div>

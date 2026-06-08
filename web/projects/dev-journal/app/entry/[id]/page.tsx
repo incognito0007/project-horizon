@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useEntry } from "@/hooks/useEntry";
 import { StackBadge } from "@/components/StackBadge";
 import { MoodIndicator } from "@/components/MoodIndicator";
-import { Button } from "@/components/Button";
 import { formatDate } from "@/utils/formatDate";
 import type { Stack } from "@/types/journal";
+import { signOut } from "next-auth/react";
 
 interface EntryPageProps {
   params: Promise<{ id: string }>;
@@ -23,29 +23,46 @@ export default function EntryPage({ params }: EntryPageProps) {
       <main
         style={{ maxWidth: "680px", margin: "0 auto", padding: "40px 20px" }}
       >
-        <p style={{ color: "#888" }}>Loading entry...</p>
+        <p style={{ color: "var(--text-muted)" }}>Loading entry...</p>
       </main>
     );
   }
 
-  if (error) {
+  if (error || !entry) {
     return (
       <main
         style={{ maxWidth: "680px", margin: "0 auto", padding: "40px 20px" }}
       >
-        <p style={{ color: "#C0392B", marginBottom: "16px" }}>{error}</p>
-        <Button label="← Back" onClick={() => router.push("/")} />
-      </main>
-    );
-  }
-
-  if (!entry) {
-    return (
-      <main
-        style={{ maxWidth: "680px", margin: "0 auto", padding: "40px 20px" }}
-      >
-        <p style={{ color: "#888", marginBottom: "16px" }}>Entry not found.</p>
-        <Button label="← Back to Journal" onClick={() => router.push("/")} />
+        <p style={{ color: "#C0392B", marginBottom: "16px" }}>
+          {error ?? "Entry not found."}
+        </p>
+        <button
+          onClick={() => router.push("/")}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "var(--text-secondary)",
+            fontSize: "14px",
+            padding: 0,
+          }}
+        >
+          ← Back to Journal
+        </button>
+        <button
+          onClick={() => signOut({ callbackUrl: "/auth/login" })}
+          style={{
+            background: "none",
+            border: "1px solid var(--btn-outline-border)",
+            padding: "8px 14px",
+            borderRadius: "8px",
+            fontSize: "14px",
+            cursor: "pointer",
+            color: "var(--btn-outline-text)",
+          }}
+        >
+          Sign out
+        </button>
       </main>
     );
   }
@@ -59,21 +76,28 @@ export default function EntryPage({ params }: EntryPageProps) {
           background: "none",
           border: "none",
           cursor: "pointer",
-          color: "#888",
+          color: "var(--text-secondary)",
           fontSize: "14px",
-          marginBottom: "24px",
+          marginBottom: "28px",
           padding: 0,
         }}
       >
         ← Back to Journal
       </button>
 
-      {/* Header */}
-      <div style={{ marginBottom: "24px" }}>
-        <h1 style={{ fontSize: "22px", fontWeight: 700, margin: "0 0 6px" }}>
+      {/* Title + date */}
+      <div style={{ marginBottom: "20px" }}>
+        <h1
+          style={{
+            fontSize: "22px",
+            fontWeight: 700,
+            color: "var(--text-primary)",
+            margin: "0 0 6px",
+          }}
+        >
           {entry.title}
         </h1>
-        <p style={{ color: "#888", fontSize: "13px", margin: 0 }}>
+        <p style={{ color: "var(--text-muted)", fontSize: "13px", margin: 0 }}>
           {formatDate(entry.date)}
         </p>
       </div>
@@ -84,7 +108,7 @@ export default function EntryPage({ params }: EntryPageProps) {
           display: "flex",
           gap: "6px",
           flexWrap: "wrap",
-          marginBottom: "16px",
+          marginBottom: "20px",
         }}
       >
         {entry.stack.map((s: Stack) => (
@@ -92,36 +116,39 @@ export default function EntryPage({ params }: EntryPageProps) {
         ))}
       </div>
 
-      {/* Mood + time */}
+      {/* Mood + time — fixed colors */}
       <div
         style={{
           display: "flex",
-          gap: "20px",
-          marginBottom: "24px",
-          padding: "12px 16px",
-          background: "#f9f9f9",
-          borderRadius: "8px",
+          gap: "24px",
+          marginBottom: "28px",
+          padding: "14px 18px",
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
+          borderRadius: "10px",
           fontSize: "13px",
         }}
       >
-        <div>
-          <span style={{ color: "#aaa", marginRight: "6px" }}>Mood</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <span style={{ color: "var(--text-secondary)" }}>Mood</span>
           <MoodIndicator mood={entry.mood} />
         </div>
-        <div>
-          <span style={{ color: "#aaa", marginRight: "6px" }}>Time spent</span>
-          <span style={{ fontWeight: 500 }}>⏱ {entry.timeSpentMins} mins</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <span style={{ color: "var(--text-secondary)" }}>Time spent</span>
+          <span style={{ fontWeight: 500, color: "var(--text-primary)" }}>
+            ⏱ {entry.timeSpentMins} mins
+          </span>
         </div>
       </div>
 
-      {/* Summary */}
+      {/* Summary — fixed color */}
       <div
         style={{
           fontSize: "15px",
-          lineHeight: "1.7",
-          color: "#333",
-          borderLeft: "3px solid #e2e2e2",
-          paddingLeft: "16px",
+          lineHeight: "1.75",
+          color: "var(--text-primary)",
+          borderLeft: "3px solid var(--border)",
+          paddingLeft: "18px",
         }}
       >
         {entry.summary}
