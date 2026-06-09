@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Decision Mirror
+
+Decision Mirror is a decision-making companion that helps users organize their thoughts by listing pros and cons, assigning importance scores, and receiving recommendations based on their own reasoning.
+
+Instead of relying entirely on emotions or external opinions, Decision Mirror encourages users to think through their decisions in a structured manner.
+
+---
+
+## Problem Statement
+
+People often struggle with everyday decisions such as:
+
+- Should I switch jobs?
+- Should I buy this expensive gadget?
+- Should I pursue higher studies?
+- Should I start this habit?
+
+Most people either:
+
+- Make emotional decisions,
+- Ask others to decide for them,
+- Or overthink and delay making a decision.
+
+Decision Mirror helps users break down decisions into manageable pieces and understand the trade-offs involved.
+
+---
+
+## Features
+
+### Decision Creation
+
+- Create new decisions.
+- Provide a title for the decision.
+
+### Pros and Cons
+
+- Add positive reasons (Pros).
+- Add negative reasons (Cons).
+- Assign importance scores to each reason.
+
+### Recommendation Engine
+
+- Calculate recommendation percentages.
+- Generate recommendation labels.
+
+### Decision Summary
+
+- View recommendation details.
+- Review the reasons behind recommendations.
+
+### Decision History
+
+- Revisit previous decisions.
+
+### Decision Management
+
+- Edit existing decisions.
+- Delete unwanted decisions.
+
+### Local Persistence
+
+- Automatically save decisions.
+- Restore decisions after refreshing the page.
+
+---
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Storybook
+- CSS Modules
+- Local Storage
+
+---
+
+## Screens
+
+### Dashboard
+
+Displays previously created decisions.
+
+### Create Decision
+
+Allows users to add decisions, pros, and cons.
+
+### Decision Summary
+
+Displays recommendation scores and reasoning.
+
+### Delete Confirmation
+
+Prevents accidental deletion.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run Storybook:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Documentation
 
-To learn more about Next.js, take a look at the following resources:
+- USER_STORIES.md
+- ARCHITECTURE.md
+- ROADMAP.md
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Goal
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The goal of this project is to demonstrate how a modern frontend application can be designed, documented, and developed using product thinking and engineering best practices.
