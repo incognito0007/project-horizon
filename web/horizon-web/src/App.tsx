@@ -24,6 +24,8 @@ import { printUserSettings } from './day-to-day-learning/06-ts-partial-required-
 import { printTodoDetails } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/readonly'
 import { printUserWithoutIdWrapper } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/omitAndPick'
 import { printUserWithNameOrAgeWrapper } from './day-to-day-learning/06-ts-partial-required-readonly-pick-omit/omitAndPick'
+import ExampleUseState from './day-to-day-learning/07-useState-vs-useReducer/ExampleUseState'
+import ExampleUseReducer from './day-to-day-learning/07-useState-vs-useReducer/ExampleUseReducer'
 
 function App() {
   const propsData = {
@@ -85,6 +87,8 @@ function App() {
       {printTodoDetails() ?? null}
       {printUserWithoutIdWrapper() ?? null}
       {printUserWithNameOrAgeWrapper() ?? null}
+      <ExampleUseState />
+      <ExampleUseReducer />
     </div>
   )
 }
